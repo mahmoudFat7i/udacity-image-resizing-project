@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run build && npm run jasmine",
-    "lint": "eslint . --ext .ts",
     "build": "tsc",
     "start": "nodemon src/index.ts",
     "startjs": "nodemon dist/.",
     "jasmine": "jasmine",
-    "prettier": "prettier --config .prettierrc {,!(node_modules)/**/}*.ts --write"
+    "prettier": "prettier --config .prettierrc --write ./src/**/*.ts ",
+    "lint": "eslint  ./src/**/*.ts",
+    "lint-fix": "eslint  ./src/**/*.ts --fix"
+
   },
   "author": "mahmoud fathy",
   "license": "ISC",
