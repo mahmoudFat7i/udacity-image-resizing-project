@@ -50,30 +50,31 @@ export const getImage = async(queries: ParsedQs):Promise<string> =>{
         makeResizedDirIfNotFound();
         if (width && height){
             const imagePath = path.join(imagesDir,`resized` , filename + `-width${width}-height${height}.jpg`);
-            if (!fs.existsSync(imagePath)) {
-                await resizeImageWidthAndHeight(originalPath, imagePath, parseInt(width as string) ,parseInt(height as string))            
-            }else{
-                
-            }
-            return imagePath;
+                try {
+                    await resizeImageWidthAndHeight(originalPath, imagePath, parseInt(width as string) ,parseInt(height as string));            
+                    return imagePath;
+                } catch (error) {
+                    throw new Error(`Error on handling getImage function with Error: ${error}`);
+                }
         }
         else if ( height){
             const imagePath = path.join(imagesDir,`resized` , filename + `-height${height}.jpg`);
-            if (!fs.existsSync(imagePath)) {
-                await resizeImageHeight(originalPath, imagePath ,parseInt(height as string))            
-    
-            }else{
-                
-            }
-            return imagePath;
+                try {
+                    await resizeImageHeight(originalPath, imagePath ,parseInt(height as string))            
+                    return imagePath;
+                } catch (error) {
+                    throw new Error(`Error on handling getImage function with Error: ${error}`);
+                }
         }
         else{
             const imagePath = path.join(imagesDir,`resized` , filename + `-width${width}.jpg`);
-            if (!fs.existsSync(imagePath)) {
-                await resizeImageWidth(originalPath, imagePath, parseInt(width as string))            
-            }else{
-            }
-            return imagePath;
+                try {
+                    await resizeImageWidth(originalPath, imagePath, parseInt(width as string))            
+                    return imagePath;
+                } catch (error) {
+                    throw new Error(`Error on handling getImage function with Error: ${error}`);
+                }
+            
         }
     }
 };

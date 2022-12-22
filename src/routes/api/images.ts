@@ -10,7 +10,7 @@ imagesRoutes.get('/', async (req, res) =>{
         const imagePath :string = await getImage(req.query); // هنا هنادي فنكشن فيها برومس
         res.sendFile(imagePath);
     } catch (error) {
-        throw new Error(`Error on handling getImage function with Error: ${error}`); // اشطا عليك
+        throw new Error(`Error on handling getImage function with Error: ${error}`);
         
     }
 });
