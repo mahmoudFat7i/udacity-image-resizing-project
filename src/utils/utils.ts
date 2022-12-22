@@ -72,7 +72,7 @@ export const getImage = async(queries: ParsedQs):Promise<string> =>{
                     await resizeImageWidth(originalPath, imagePath, parseInt(width as string))            
                     return imagePath;
                 } catch (error) {
-                    throw new Error(`Error on handling getImage function with Error: ${error}`); 
+                    throw new Error(`Error on handling getImage function with Error: ${error}`);   
                 }
             
         }
