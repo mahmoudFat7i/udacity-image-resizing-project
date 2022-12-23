@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run build && npm run jasmine",
     "build": "tsc",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine --es-module-specifier-resolution=node",
     "start": "nodemon src/index.ts",
     "startjs": "nodemon dist/.",
-    "jasmine": "jasmine",
     "prettier": "prettier --config .prettierrc --write src ",
     "lint": "eslint  ./src/**/*.ts",
     "lint-fix": "eslint  ./src/**/*.ts --fix"
