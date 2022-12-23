@@ -25,7 +25,7 @@ const resizeImageWidthAndHeight = async (
   await sharp(inputPath).resize({ height, width }).toFile(outputPath)
 }
 
-const makeResizedDirIfNotFound = ():void => {
+const makeResizedDirIfNotFound = () => {
   const imagesDir = getImagesDir()
   const resizedPath = path.join(imagesDir, 'resized')
   if (!fs.existsSync(resizedPath)) {

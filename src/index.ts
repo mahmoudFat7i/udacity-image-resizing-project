@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import apiRoute from './routes/api'
 
 const app = express()
@@ -6,7 +6,7 @@ export const port = 3000
 
 app.use('/api', apiRoute)
 
-app.get('/', (_req, res) => {
+app.get('/', (_req: Request, res: Response): void => {
   res.json({
     message:
       'use api/images?filename={FILE} with optional height and width queries to start',

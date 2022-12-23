@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import {
   dimensionsValidation,
   imageExists,
@@ -8,7 +8,7 @@ import { getImage } from '../../utils/utils'
 const imagesRoutes = express.Router()
 imagesRoutes.use([imageExists, dimensionsValidation])
 
-imagesRoutes.get('/', async (req, res) => {
+imagesRoutes.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const imagePath: string = await getImage(req.query)
     res.sendFile(imagePath)
