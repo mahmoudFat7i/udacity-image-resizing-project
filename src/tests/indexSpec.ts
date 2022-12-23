@@ -33,14 +33,6 @@ describe('endpoints  test', () => {
 })
 
 describe('image processing test', () => {
-  it('test image processing function with valid parameters', () => {
-    const correctDataParameters = getImage({
-      filename: 'fjord',
-      width: 100 as unknown as string,
-      height: 100 as unknown as string,
-    })
-    expect(correctDataParameters).toBeTruthy
-  })
   it('test image processing function with invalid data', () => {
     const correctDataParameters = getImage({ filename: 'mjm' })
     expect(correctDataParameters).toThrowError
