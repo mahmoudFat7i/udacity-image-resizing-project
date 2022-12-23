@@ -35,9 +35,9 @@ describe('endpoints  test', () => {
 describe('image processing test', () => {
   it('test image processing function with valid parameters', () => {
     const correctDataParameters = getImage({
-      height: 100 as unknown as string,
-      width: 100 as unknown as string,
       filename: 'fjord',
+      width: 100 as unknown as string,
+      height: 100 as unknown as string,
     })
     expect(correctDataParameters).toBeTruthy
   })
