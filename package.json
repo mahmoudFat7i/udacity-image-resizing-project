@@ -9,7 +9,7 @@
     "start": "nodemon src/index.ts",
     "startjs": "nodemon dist/.",
     "jasmine": "jasmine",
-    "prettier": "prettier --config .prettierrc --write ./src/**/*.ts ",
+    "prettier": "prettier --config .prettierrc --write src ",
     "lint": "eslint  ./src/**/*.ts",
     "lint-fix": "eslint  ./src/**/*.ts --fix"
 
